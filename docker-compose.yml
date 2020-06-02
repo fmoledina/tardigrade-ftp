@@ -1,0 +1,30 @@
+version: "3.7"
+services:
+  tardigrade-ftp:
+    build: .
+    container_name: tardigrade-ftp
+    restart: always
+    networks:
+      - default
+    ports:
+      - "21:21"
+      - "30000-30100:30000-30100"
+    environment:
+      - STORJ_SAT_ADDRESS
+      - STORJ_API_KEY
+      - STORJ_ACCESS
+      - STORJ_PASSPHRASE
+      - FTP_USER
+      - FTP_BUCKET
+      - FTP_PASV_ADDRESS
+    volumes:
+      - /tmp/gateway:/root/.local/share/storj/gateway
+    cap_add: 
+      - SYS_ADMIN
+    security_opt: 
+      - apparmor:unconfined
+    devices: 
+      - /dev/fuse:/dev/fuse
+
+networks:
+  default:
