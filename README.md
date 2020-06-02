@@ -1,5 +1,12 @@
 # INCOMPLETE - NOT FUNCTIONAL
-Initial commit. Doesn't work yet.
+Initial commit. Not all functionality is complete.
+| Component | Status |
+| :--- | --- |
+| Non-interactive Tardigrade S3 gateway setup | :white_check_mark: |
+| s3fs connection to Tardigrade S3 | :white_check_mark: |
+| vsFTPd init | :white_check_mark: |
+| Connection to FTP server | |
+Somewhere in the configuration for user accounts, there may be a permissions issue with actually using the FTP server. 
 # Tardigrade-backed FTP Server
 An FTP server using s3fs and the [Storj](https//storj.io/) S3 gateway to mount a [Tardigrade](https://tardigrade.io/) bucket as FTP storage. This project is based on previous work in the [Factual/open-dockerfiles](https://github.com/Factual/open-dockerfiles/blob/master/s3-backed-ftp/README.md) project and [the fork by janek26](https://github.com/janek26/open-dockerfiles/tree/master/s3-backed-ftp). 
 
